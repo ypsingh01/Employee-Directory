@@ -2,6 +2,10 @@
 
 Full-stack Employee Directory web application built with React and Express. Users can browse, search, filter, paginate, add, edit, and delete employee records backed by a JSON file datastore for zero-configuration local development.
 
+**Suggested GitHub "About" description** (paste under repository **Settings → General → Description** if you want it on the repo home page):
+
+`Full-stack employee directory: React + Tailwind UI, Express REST API, JSON-backed CRUD, debounced search, department filter, and pagination.`
+
 ## Prerequisites
 
 - Node.js 18 or newer (includes `npm`)
