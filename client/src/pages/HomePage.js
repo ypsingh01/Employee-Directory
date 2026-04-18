@@ -15,7 +15,7 @@ const pageSize = 9;
 /**
  * Filters employees using a case-insensitive match on name or department
  * @param {Array<Object>} employees - Full employee collection from the API
- * @param {string} query - Debounced search string from the search bar
+ * @param {string} query - Applied search string from the search bar (after Search is clicked)
  * @param {string} departmentFilter - Selected department or the sentinel "all"
  * @returns {Array<Object>} Employees matching both predicates
  */
@@ -54,7 +54,8 @@ const slicePage = (items, currentPage) => {
 const HomePage = () => {
   const [employees, setEmployees] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [debouncedQuery, setDebouncedQuery] = useState('');
+  const [isSearchPanelOpen, setIsSearchPanelOpen] = useState(false);
+  const [appliedSearchQuery, setAppliedSearchQuery] = useState('');
   const [departmentFilter, setDepartmentFilter] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
   const [isAddFormVisible, setIsAddFormVisible] = useState(false);
@@ -96,8 +97,8 @@ const HomePage = () => {
    * Employees matching the active search and department selection
    */
   const filteredEmployees = useMemo(() => {
-    return filterEmployees(employees, debouncedQuery, departmentFilter);
-  }, [employees, debouncedQuery, departmentFilter]);
+    return filterEmployees(employees, appliedSearchQuery, departmentFilter);
+  }, [employees, appliedSearchQuery, departmentFilter]);
 
   /**
    * Total pages given the filtered collection length
@@ -124,15 +125,24 @@ const HomePage = () => {
    */
   useEffect(() => {
     setCurrentPage(1);
-  }, [debouncedQuery, departmentFilter]);
+  }, [appliedSearchQuery, departmentFilter]);
 
   /**
-   * Stable handler forwarded to the debounced search component
-   * @param {string} nextQuery - Latest debounced query string
+   * Persists the query returned from the search panel and resets pagination
+   * @param {string} nextQuery - Trimmed query applied after clicking Search
    * @returns {void}
    */
-  const handleDebouncedSearch = useCallback((nextQuery) => {
-    setDebouncedQuery(nextQuery);
+  const handleApplySearch = useCallback((nextQuery) => {
+    setAppliedSearchQuery(nextQuery);
+  }, []);
+
+  /**
+   * Collapses the search panel and clears any active text search filter
+   * @returns {void}
+   */
+  const handleCloseSearchPanel = useCallback(() => {
+    setIsSearchPanelOpen(false);
+    setAppliedSearchQuery('');
   }, []);
 
   /**
@@ -175,8 +185,40 @@ const HomePage = () => {
     <div className="space-y-8">
       <section className="rounded-2xl border border-slate-200 bg-white/80 p-6 shadow-sm backdrop-blur">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-          <div className="w-full flex-1">
-            <SearchBar onDebouncedChange={handleDebouncedSearch} />
+          <div className="w-full flex-1 space-y-3">
+            {!isSearchPanelOpen ? (
+              <div className="flex flex-col gap-2 rounded-xl border border-dashed border-slate-300 bg-slate-50/80 p-4 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-sm text-slate-600">
+                  Search is off. Open search to filter the roster by name or department.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setIsSearchPanelOpen(true)}
+                  className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-indigo-500/30 transition hover:bg-indigo-700"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <circle cx="11" cy="11" r="7" />
+                    <line x1="16.65" y1="16.65" x2="21" y2="21" />
+                  </svg>
+                  Search
+                </button>
+              </div>
+            ) : (
+              <SearchBar
+                committedQuery={appliedSearchQuery}
+                onApplySearch={handleApplySearch}
+                onClosePanel={handleCloseSearchPanel}
+              />
+            )}
           </div>
           <div className="w-full max-w-xs">
             <label className="flex w-full flex-col gap-2">

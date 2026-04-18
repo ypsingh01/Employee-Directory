@@ -1,1 +1,110 @@
-[]
+[
+  {
+    "id": "a1f0c2e0-6c8b-4d9a-9f1e-2b3c4d5e6f01",
+    "name": "Arjun Mehta",
+    "role": "Senior Software Engineer",
+    "department": "Engineering",
+    "email": "arjun.mehta@company.in",
+    "phone": "+91 98765 43210",
+    "createdAt": "2025-01-08T09:15:00.000Z"
+  },
+  {
+    "id": "b2e1d3f1-7d9c-5e0b-a0f2-3c4d5e6f708",
+    "name": "Priya Sharma",
+    "role": "Engineering Manager",
+    "department": "Engineering",
+    "email": "priya.sharma@company.in",
+    "phone": "+91 98102 33445",
+    "createdAt": "2025-01-09T11:20:00.000Z"
+  },
+  {
+    "id": "c3f2e4a2-8e0d-6f1c-b1a3-4d5e6f70819",
+    "name": "Vikram Singh",
+    "role": "DevOps Engineer",
+    "department": "Engineering",
+    "email": "vikram.singh@company.in",
+    "phone": "",
+    "createdAt": "2025-01-10T08:45:00.000Z"
+  },
+  {
+    "id": "d4a3f5b3-9f1e-7a2d-c2b4-5e6f708192a",
+    "name": "Ananya Iyer",
+    "role": "Product Designer",
+    "department": "Product",
+    "email": "ananya.iyer@company.in",
+    "phone": "+91 99887 66554",
+    "createdAt": "2025-01-11T14:00:00.000Z"
+  },
+  {
+    "id": "e5b4a6c4-a0f2-8b3e-d3c5-6f708192a3b",
+    "name": "Rohan Kapoor",
+    "role": "Product Manager",
+    "department": "Product",
+    "email": "rohan.kapoor@company.in",
+    "phone": "+91 91234 55667",
+    "createdAt": "2025-01-12T10:30:00.000Z"
+  },
+  {
+    "id": "f6c5b7d5-b1a3-9c4f-e4d6-708192a3b4c",
+    "name": "Deepika Nair",
+    "role": "People Partner",
+    "department": "Human Resources",
+    "email": "deepika.nair@company.in",
+    "phone": "+91 97654 32109",
+    "createdAt": "2025-01-13T09:00:00.000Z"
+  },
+  {
+    "id": "a7d6c8e6-c2b4-a0d5-f5e7-8192a3b4c5d",
+    "name": "Karthik Reddy",
+    "role": "Financial Analyst",
+    "department": "Finance",
+    "email": "karthik.reddy@company.in",
+    "phone": "",
+    "createdAt": "2025-01-14T13:45:00.000Z"
+  },
+  {
+    "id": "b8e7d9f7-d3c5-b1e6-a6f8-92a3b4c5d6e",
+    "name": "Sneha Patil",
+    "role": "Accounts Lead",
+    "department": "Finance",
+    "email": "sneha.patil@company.in",
+    "phone": "+91 90909 11223",
+    "createdAt": "2025-01-15T07:50:00.000Z"
+  },
+  {
+    "id": "c9f8e0a8-e4d6-c2f7-b7a9-a3b4c5d6e7f",
+    "name": "Aditya Joshi",
+    "role": "Sales Manager",
+    "department": "Sales",
+    "email": "aditya.joshi@company.in",
+    "phone": "+91 93456 77889",
+    "createdAt": "2025-01-16T12:10:00.000Z"
+  },
+  {
+    "id": "d0a9f1b9-f5e7-d3a8-c8b0-b4c5d6e7f809",
+    "name": "Lakshmi Venkatesh",
+    "role": "Operations Lead",
+    "department": "Operations",
+    "email": "lakshmi.venkatesh@company.in",
+    "phone": "+91 94567 88990",
+    "createdAt": "2025-01-17T15:25:00.000Z"
+  },
+  {
+    "id": "e1b0a2c0-a6f8-e4b9-d9c1-c5d6e7f8091a",
+    "name": "Rajesh Kulkarni",
+    "role": "IT Support Specialist",
+    "department": "Operations",
+    "email": "rajesh.kulkarni@company.in",
+    "phone": "+91 92345 66778",
+    "createdAt": "2025-01-18T08:40:00.000Z"
+  },
+  {
+    "id": "f2c1b3d1-b7a9-f5c0-e0d2-d6e7f8091a2b",
+    "name": "Meera Krishnan",
+    "role": "Talent Acquisition Partner",
+    "department": "Human Resources",
+    "email": "meera.krishnan@company.in",
+    "phone": "",
+    "createdAt": "2025-01-19T11:55:00.000Z"
+  }
+]

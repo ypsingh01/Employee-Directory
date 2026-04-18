@@ -4,7 +4,7 @@ Full-stack Employee Directory web application built with React and Express. User
 
 **Suggested GitHub "About" description** (paste under repository **Settings → General → Description** if you want it on the repo home page):
 
-`Full-stack employee directory: React + Tailwind UI, Express REST API, JSON-backed CRUD, debounced search, department filter, and pagination.`
+`Full-stack employee directory: React + Tailwind UI, Express REST API, JSON-backed CRUD, button-triggered search, department filter, and pagination.`
 
 ## Prerequisites
 
@@ -89,5 +89,5 @@ Employee records are persisted in `server/data/employees.json`.
 ## Notes
 
 - Email addresses must be unique; duplicates return a `400` response from the API.
-- The UI debounces search input by 300 milliseconds and matches on employee name or department in a case-insensitive manner.
+- Search opens from the Search control on the home page; filtering runs when you click the in-panel Search button or press Enter, matching name or department in a case-insensitive manner.
 - Toast notifications surface success and error feedback for mutations and network issues.
